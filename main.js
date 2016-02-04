@@ -11,7 +11,7 @@ var bot = controller.spawn({
 var owners = [ "U0EGDRXEK" ];
 var meekan_user = "U0GQF3PTL";
 var annoyingness_channel = "C0L6XQ3FS";
-var hexme = [ "U0G281Q8L" ];
+var hexme = [ "U0G281Q8L", "U0EGDRXEK" ];
 
 var phIntToken = getVar("PH_INT_TOKEN");
 
