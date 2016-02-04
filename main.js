@@ -36,7 +36,7 @@ bot.startRTM(function(err,bot,payload) {
 		});
 	});
 
-	controller.hears(["broswers", "fialls", "jabascript"],'ambient',function(bot, message) {
+	controller.hears(["broswers", "fialls", "jabascript", "outpot"],'ambient',function(bot, message) {
 		bot.reply(message, 'lel speling iz inded harrd');
 	});
 
