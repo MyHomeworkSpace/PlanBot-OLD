@@ -1,0 +1,8 @@
+{
+  "name": "planbot",
+  "version": "0.0.1",
+  "dependencies": {
+    "botkit": "0.0.5",
+    "request": "^2.69.0"
+  }
+}
