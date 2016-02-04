@@ -50,7 +50,7 @@ bot.startRTM(function(err,bot,payload) {
 	});
 
 	controller.hears(["hi", "hai", "hello", "helo"],'direct_message,direct_mention,mention',function(bot, message) {
-		bot.reply(message, 'Hello there!');
+		bot.reply(message, 'Hai thar, *Hexr*!');
 	});
 
 	controller.hears(['ping'],'direct_message,direct_mention,mention',function(bot, message) {
