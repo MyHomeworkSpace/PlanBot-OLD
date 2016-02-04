@@ -39,6 +39,10 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(["broswers", "fialls", "jabascript", "outpot"],'ambient',function(bot, message) {
 		bot.reply(message, 'lel speling iz inded harrd');
 	});
+	
+	controller.hears(["LEWL"],'ambient',function(bot, message) {
+		bot.reply(message, '*_LEWL_*');
+	});
 
 	controller.hears(["shiny", "prettyful"],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, ":sparkles: Shiny and prettyful is good.");
