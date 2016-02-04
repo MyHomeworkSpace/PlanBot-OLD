@@ -11,6 +11,7 @@ var bot = controller.spawn({
 var owners = [ "U0EGDRXEK" ];
 var meekan_user = "U0GQF3PTL";
 var annoyingness_channel = "C0L6XQ3FS";
+var hexme = [ "U0G281Q8L", "U0EGDRXEK"];
 
 var phIntToken = getVar("PH_INT_TOKEN");
 
@@ -58,6 +59,36 @@ bot.startRTM(function(err,bot,payload) {
 
 	controller.hears(['identify yourself','who are you','what is your name'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'I am *PlanBot*! Not to be confused with https://github.com/PlanHubMe/PlanHub/issues/256. Not sure what\'s up with that.');
+	});
+	
+	controller.hears(['hex me'],'direct_mention,mention',function(bot, message) {
+		bot.startConversation(message,function(err, convo) {
+			convo.ask('Please confirm: you are *absolutely* sure you want to be hexed',[
+				{
+					pattern: bot.utterances.yes,
+					callback: function(response, convo) {
+						if (hexme.indexOf(response.user) > -1) {
+							convo.say('YOU HAVE BEEN HEXED :hackerman: :planhub:');
+							convo.next();
+							setTimeout(function() {
+								process.exit();
+							}, 3000);
+						} else {
+							convo.say("NU HEXING ALLOWED SORRY");
+							convo.next();
+						}
+					}
+				},
+				{
+					pattern: bot.utterances.no,
+					default: true,
+					callback: function(response, convo) {
+						convo.say('*Okay then, no hexing for today...*');
+						convo.next();
+					}
+				}
+			]);
+		});
 	});
 
 	controller.hears([':simple_smile:'],'ambient',function(bot, message) {
