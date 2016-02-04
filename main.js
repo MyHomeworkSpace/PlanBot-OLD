@@ -36,16 +36,16 @@ bot.startRTM(function(err,bot,payload) {
 		});
 	});
 
-	controller.hears(["hi", "hai", "hello", "helo"],'direct_message,direct_mention,mention',function(bot, message) {
-		bot.reply(message, 'Hello there!');
-	});
-
 	controller.hears(["broswers", "fialls", "jabascript"],'ambient',function(bot, message) {
 		bot.reply(message, 'lel speling iz inded harrd');
 	});
 
 	controller.hears(["shiny", "prettyful"],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, ":sparkles: Shiny and prettyful is good.");
+	});
+
+	controller.hears(["hi", "hai", "hello", "helo"],'direct_message,direct_mention,mention',function(bot, message) {
+		bot.reply(message, 'Hello there!');
 	});
 
 	controller.hears(['ping'],'direct_message,direct_mention,mention',function(bot, message) {
