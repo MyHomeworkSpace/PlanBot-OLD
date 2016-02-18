@@ -12,6 +12,7 @@ var owners = [ "U0EGDRXEK" ];
 var meekan_user = "U0GQF3PTL";
 var annoyingness_channel = "C0L6XQ3FS";
 var hexme = [ "U0G281Q8L", "U0EGDRXEK" ];
+var chat_channel = "C0MS09H2L";
 
 var phIntToken = getVar("PH_INT_TOKEN");
 
@@ -163,6 +164,12 @@ bot.startRTM(function(err,bot,payload) {
 				}
 			]);
 		});
+	});
+	
+	controller.hears(['chats'],'direct_mention,mention',function(bot, message) {
+		if (message.channel == chat_channel) {
+			bot.reply("This feature is currently under_hexing.");
+		}
 	});
 });
 
