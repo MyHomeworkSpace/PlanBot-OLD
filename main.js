@@ -167,9 +167,8 @@ bot.startRTM(function(err,bot,payload) {
 	});
 	
 	controller.hears(['chats'],'direct_mention,mention',function(bot, message) {
-		bot.reply(message.channel);
 		if (message.channel == chat_channel) {
-			bot.reply("This feature is currently under_hexing.");
+			bot.reply(message, "This feature is currently under_hexing.");
 		}
 	});
 });
