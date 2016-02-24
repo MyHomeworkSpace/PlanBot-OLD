@@ -95,6 +95,10 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears([':simple_smile:'],'ambient',function(bot, message) {
 		bot.reply(message, ':simple_smile:');
 	});
+	
+	controller.hears(["Who is the saddest, most depressing creature in the world? ...Like this guy just makes people sad by showing his face..."], "ambient", function(bot, message) {
+		bot.reply(message, "Ignore slackbot. It's obviously @c20et.")	
+	});
 
 	controller.hears(['users'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Loading, please wait...');
