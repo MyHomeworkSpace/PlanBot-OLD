@@ -135,7 +135,7 @@ bot.startRTM(function(err,bot,payload) {
 		}
 	});
 
-	controller.hears(["..."],'ambient',function(bot, message) {
+	controller.hears(["\\.\\.\\."],'ambient',function(bot, message) {
 		if (message.channel == dotdotdot_channel) {
 			bot.reply(message, "...");
 		}
