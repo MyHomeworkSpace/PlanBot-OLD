@@ -13,6 +13,7 @@ var meekan_user = "U0GQF3PTL";
 var annoyingness_channel = "C0L6XQ3FS";
 var hexme = [ "U0G281Q8L", "U0EGDRXEK" ];
 var chat_channel = "C0MS09H2L";
+var dotdotdot_channel = "C0Q1B69HT";
 
 var phIntToken = getVar("PH_INT_TOKEN");
 
@@ -131,6 +132,12 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(["I didn't get that.", "I don't understand.", "scheduling robot", "not sure what you mean.", 'That does not compute'],'ambient',function(bot, message) {
 		if (message.user == meekan_user && message.channel == annoyingness_channel) {
 			bot.reply(message, "Well, maybe be less of a _Meekan_, and more of a *PlanBot*.");
+		}
+	});
+
+	controller.hears(["..."],'ambient',function(bot, message) {
+		if (message.channel == dotdotdot_channel) {
+			bot.reply(message, "...");
 		}
 	});
 
