@@ -55,11 +55,6 @@ bot.startRTM(function(err,bot,payload) {
 		bot.reply(message, 'Hai thar, *Hexr*!');
 	});
 	
-	controller.hears(["."], 'ambient',function(bot, message) {
-		bot.reply(message, '<@c22hexr>++');
-		bot.reply(message, '<@thatoddmailbox>++');
-	});
-
 	controller.hears(['ping'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Pong!');
 	});
@@ -131,7 +126,7 @@ bot.startRTM(function(err,bot,payload) {
 	});
 
 	controller.hears(['help'],'direct_message,direct_mention,mention',function(bot, message) {
-		bot.reply(message, "I don't really do much as of now. I hope to do more things in the future! Tell @thatoddmailbox if you have any suggestions.");
+		bot.reply(message, "I don't really do much as of now. I hope to do more things in the future! Tell <@thatoddmailbox> if you have any suggestions.");
 	});
 
 	controller.hears(["I didn't get that.", "I don't understand.", "scheduling robot", "not sure what you mean.", 'That does not compute'],'ambient',function(bot, message) {
@@ -165,7 +160,7 @@ bot.startRTM(function(err,bot,payload) {
 								process.exit();
 							}, 3000);
 						} else {
-							convo.say("Hey, wait a minute! You're not allowed to do that—only @thatoddmailbox can shut me down!");
+							convo.say("Hey, wait a minute! You're not allowed to do that—only <@thatoddmailbox> can shut me down!");
 							convo.next();
 						}
 					}
