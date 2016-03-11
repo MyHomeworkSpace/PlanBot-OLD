@@ -8,7 +8,7 @@ var bot = controller.spawn({
 });
 
 // slack's api only gives these weird codes instead of usernames :(
-var owners = [ "U0EGDRXEK", "U0EGTKEFM" ];
+var owners = [ "U0EGDRXEK" ];
 var meekan_user = "U0GQF3PTL";
 var annoyingness_channel = "C0L6XQ3FS";
 var hexme = [ "U0G281Q8L", "U0EGDRXEK" ];
@@ -160,7 +160,7 @@ bot.startRTM(function(err,bot,payload) {
 								process.exit();
 							}, 3000);
 						} else {
-							convo.say("Hey, wait a minute! You're not allowed to do that—only Team Admins can shut me down!");
+							convo.say("Hey, wait a minute! You're not allowed to do that—only <@thatoddmailbox> can shut me down!");
 							convo.next();
 						}
 					}
