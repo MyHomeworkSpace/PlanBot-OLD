@@ -55,7 +55,7 @@ bot.startRTM(function(err,bot,payload) {
 		bot.reply(message, 'Hai thar, *Hexr*!');
 	});
 	
-	controller.hears(["."])'ambient',function(bot, message) {
+	controller.hears(["."]), 'ambient',function(bot, message) {
 		bot.reply(message, '@c22hexr++');
 		bot.reply(message, '@thatoddmailbox++');
 	});
