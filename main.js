@@ -54,6 +54,11 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(["hi", "hai", "hello", "helo"],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Hai thar, *Hexr*!');
 	});
+	
+	controller.hears(["."])'ambient',function(bot, message) {
+		bot.reply(message, '@c22hexr++');
+		bot.reply(message, '@thatoddmailbox++');
+	});
 
 	controller.hears(['ping'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Pong!');
