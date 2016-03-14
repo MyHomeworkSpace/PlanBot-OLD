@@ -108,11 +108,8 @@ bot.startRTM(function(err,bot,payload) {
 				"attachments": [
 					{
 						"fallback": "Go to the online PlanHub Administrative Panel and select Test User Accounts.",
-
 						"color": "#439FE0",
-
 						"pretext" : "Here is a list of test user accounts!",
-
 						"fields": [
 							{
 								"title": "Teacher",
@@ -148,17 +145,14 @@ bot.startRTM(function(err,bot,payload) {
 					},
 					{
 						"fallback": "Signing into a test user account will sign you out of your account.",
-
 						"color": "danger",
-
 						"title": "Warning",
-
 						"text" : "Signing into a test user account will sign you out of your account."
 					}
 				]
 			}
 		);
-	)};
+	});
 
 	controller.hears(['users'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Loading, please wait...');
