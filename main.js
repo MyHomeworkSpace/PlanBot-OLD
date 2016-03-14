@@ -101,7 +101,64 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(["Who is the saddest, most depressing creature in the world? ...Like this guy just makes people sad by showing his face..."], "ambient", function(bot, message) {
 		bot.reply(message, "Ignore slackbot. It's obviously @c20et.")	
 	});
-
+	
+	controller.hears(['users'],'direct_message,direct_mention,mention',function(bot, message) {
+		bot.reply(message, 
+		{
+		    "attachments": [
+		        {
+		            "fallback": "Required plain-text summary of the attachment.",
+		
+		            "color": "#439FE0",
+					
+					"pretext" : "Here is a list of test user accounts!",
+		
+		            "fields": [
+		                {
+		                    "title": "Teacher",
+							"value": "The full name of this user is Test Teacher.",
+		                    "short": false
+		                },
+						{
+		                    "title": "Username",
+		                    "value": "zomg_testTeacher",
+		                    "short": true
+		                },
+						{
+		                    "title": "Password",
+		                    "value": "hexrSecret!",
+		                    "short": true
+		                },  
+						{
+		                    "title": "Student",
+							"value": "The full name of this user is Test User.",
+		                    "short": false
+		                },
+						{
+		                    "title": "Username",
+		                    "value": "zomg_testUser",
+		                    "short": true
+		                },
+						{
+		                    "title": "Password",
+		                    "value": "superSecret!",
+		                    "short": true
+		                }
+		            ]
+		        },
+				{
+		            "fallback": "Required plain-text summary of the attachment.",
+		
+		            "color": "danger",
+					
+					"title": "Warning",
+					
+					"text" : "Signing into a test user account will sign you out of your account."
+		        }
+		    ]
+		}
+	)};
+	
 	controller.hears(['users'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Loading, please wait...');
 		phIntApi("users.php", function(resp) {
