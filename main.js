@@ -114,7 +114,7 @@ bot.startRTM(function(err,bot,payload) {
 				}
 				var name = user.split("|")[0];
 				var username = user.split("|")[1];
-				bot.reply(message, "• " + name + " (" + username + ", <mailto:" + username +"@dalton.org|Send them an email!>)");
+				bot.reply(message, "• " + name + " (" + username + ")");
 			}
 		});
 	});
