@@ -107,7 +107,7 @@ bot.startRTM(function(err,bot,payload) {
 		{
 		    "attachments": [
 		        {
-		            "fallback": "Required plain-text summary of the attachment.",
+		            "fallback": "Go to the online PlanHub Administrative Panel and select Test User Accounts.",
 		
 		            "color": "#439FE0",
 					
@@ -147,7 +147,7 @@ bot.startRTM(function(err,bot,payload) {
 		            ]
 		        },
 				{
-		            "fallback": "Required plain-text summary of the attachment.",
+		            "fallback": "Signing into a test user account will sign you out of your account.",
 		
 		            "color": "danger",
 					
