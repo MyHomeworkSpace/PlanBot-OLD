@@ -14,6 +14,7 @@ var annoyingness_channel = "C0L6XQ3FS";
 var hexme = [ "U0G281Q8L", "U0EGDRXEK", "U0EGTKEFM"];
 var chat_channel = "C0MS09H2L";
 var dotdotdot_channel = "C0Q1B69HT";
+var logoEmoji = "planhub";
 
 var phIntToken = getVar("PH_INT_TOKEN");
 
@@ -70,7 +71,7 @@ bot.startRTM(function(err,bot,payload) {
 					pattern: bot.utterances.yes,
 					callback: function(response, convo) {
 						if (hexme.indexOf(response.user) > -1) {
-							convo.say('YOU HAVE BEEN HEXED :hackerman: :planhub:');
+							convo.say('YOU HAVE BEEN HEXED :hackerman: :' + logoEmoji + ':');
 							convo.next();
 							setTimeout(function() {
 								process.exit();
@@ -113,7 +114,7 @@ bot.startRTM(function(err,bot,payload) {
 				}
 				var name = user.split("|")[0];
 				var username = user.split("|")[1];
-				bot.reply(message, "* " + name + " (" + username + ")");
+				bot.reply(message, "• " + name + " (" + username + ", <mailto:" + username +"@dalton.org|Send them an email!>)");
 			}
 		});
 	});
@@ -131,7 +132,7 @@ bot.startRTM(function(err,bot,payload) {
 
 	controller.hears(["I didn't get that.", "I don't understand.", "scheduling robot", "not sure what you mean.", 'That does not compute'],'ambient',function(bot, message) {
 		if (message.user == meekan_user && message.channel == annoyingness_channel) {
-			bot.reply(message, "Well, maybe be less of a _Meekan_, and more of a *PlanBot*.");
+			bot.reply(message, "Well, maybe be less of a _Meekan_, and more of a *PlanBot*. :" + logoEmoji + ':');
 		}
 	});
 
