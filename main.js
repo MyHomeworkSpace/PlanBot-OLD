@@ -14,6 +14,7 @@ var annoyingness_channel = "C0L6XQ3FS";
 var hexme = [ "U0G281Q8L", "U0EGDRXEK", "U0EGTKEFM"];
 var chat_channel = "C0MS09H2L";
 var dotdotdot_channel = "C0Q1B69HT";
+var serverOwner = "U0EGDRXEK"
 var logoEmoji = "planhub";
 
 var phIntToken = getVar("PH_INT_TOKEN");
@@ -102,7 +103,17 @@ bot.startRTM(function(err,bot,payload) {
 		bot.reply(message, "Ignore slackbot. It's obviously @c20et.")	
 	});
 	
-	controller.hears(['users'],'direct_message,direct_mention,mention',function(bot, message) {
+	controller.hears(['/pokeplanhub'],'ambient',function(bot, message){
+		bot.startPrivateConversation({user: serverOwner}, function(response, convo){
+  			convo.say('Hey! Someone requested that you poke the PlanHub server!')})	
+	});
+
+	controller.hears(['/pokeplanbot'],'ambient',function(bot, message){
+		bot.startPrivateConversation({user: serverOwner}, function(response, convo){
+  			convo.say('Hey! Someone requested that you poke the PlanBot server!')})	
+	});
+	
+	controller.hears(['test users'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 
 		{
 		    "attachments": [
