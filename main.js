@@ -43,7 +43,7 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(["broswers", "fialls", "jabascript", "outpot"],'ambient',function(bot, message) {
 		bot.reply(message, 'lel speling iz inded harrd');
 	});
-	
+
 	controller.hears(["LEWL"],'ambient',function(bot, message) {
 		bot.reply(message, '*_LEWL_*');
 	});
@@ -55,7 +55,7 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(["hi", "hai", "hello", "helo"],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Hai thar, *Hexr*!');
 	});
-	
+
 	controller.hears(['ping'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Pong!');
 	});
@@ -63,7 +63,7 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears(['identify yourself','who are you','what is your name'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'I am *PlanBot*! Not to be confused with https://github.com/PlanHubMe/PlanHub/issues/256. Not sure what\'s up with that.');
 	});
-	
+
 	controller.hears(['hex me'],'direct_mention,mention',function(bot, message) {
 		bot.startConversation(message,function(err, convo) {
 			convo.ask('Please confirm: you are *absolutely* sure you want to be hexed',[
@@ -97,68 +97,69 @@ bot.startRTM(function(err,bot,payload) {
 	controller.hears([':simple_smile:'],'ambient',function(bot, message) {
 		bot.reply(message, ':simple_smile:');
 	});
-	
+
 	controller.hears(["Who is the saddest, most depressing creature in the world? ...Like this guy just makes people sad by showing his face..."], "ambient", function(bot, message) {
-		bot.reply(message, "Ignore slackbot. It's obviously @c20et.")	
+		bot.reply(message, "Ignore slackbot. It's obviously @c20et.")
 	});
-	
+
 	controller.hears(['test users'],'direct_message,direct_mention,mention',function(bot, message) {
-		bot.reply(message, 
-		{
-		    "attachments": [
-		        {
-		            "fallback": "Go to the online PlanHub Administrative Panel and select Test User Accounts.",
-		
-		            "color": "#439FE0",
-					
-					"pretext" : "Here is a list of test user accounts!",
-		
-		            "fields": [
-		                {
-		                    "title": "Teacher",
-							"value": "The full name of this user is Test Teacher.",
-		                    "short": false
-		                },
-						{
-		                    "title": "Username",
-		                    "value": "zomg_testTeacher",
-		                    "short": true
-		                },
-						{
-		                    "title": "Password",
-		                    "value": "hexrSecret!",
-		                    "short": true
-		                },  
-						{
-		                    "title": "Student",
-							"value": "The full name of this user is Test User.",
-		                    "short": false
-		                },
-						{
-		                    "title": "Username",
-		                    "value": "zomg_testUser",
-		                    "short": true
-		                },
-						{
-		                    "title": "Password",
-		                    "value": "superSecret!",
-		                    "short": true
-		                }
-		            ]
-		        },
-				{
-		            "fallback": "Signing into a test user account will sign you out of your account.",
-		
-		            "color": "danger",
-					
-					"title": "Warning",
-					
-					"text" : "Signing into a test user account will sign you out of your account."
-		        }
-		    ]
-		}
+		bot.reply(message,
+			{
+				"attachments": [
+					{
+						"fallback": "Go to the online PlanHub Administrative Panel and select Test User Accounts.",
+
+						"color": "#439FE0",
+
+						"pretext" : "Here is a list of test user accounts!",
+
+						"fields": [
+							{
+								"title": "Teacher",
+								"value": "The full name of this user is Test Teacher.",
+								"short": false
+							},
+							{
+								"title": "Username",
+								"value": "zomg_testTeacher",
+								"short": true
+							},
+							{
+								"title": "Password",
+								"value": "hexrSecret!",
+								"short": true
+							},
+							{
+								"title": "Student",
+								"value": "The full name of this user is Test User.",
+								"short": false
+							},
+							{
+								"title": "Username",
+								"value": "zomg_testUser",
+								"short": true
+							},
+							{
+								"title": "Password",
+								"value": "superSecret!",
+								"short": true
+							}
+						]
+					},
+					{
+						"fallback": "Signing into a test user account will sign you out of your account.",
+
+						"color": "danger",
+
+						"title": "Warning",
+
+						"text" : "Signing into a test user account will sign you out of your account."
+					}
+				]
+			}
+		);
 	)};
-	
+
 	controller.hears(['users'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message, 'Loading, please wait...');
 		phIntApi("users.php", function(resp) {
@@ -234,7 +235,7 @@ bot.startRTM(function(err,bot,payload) {
 			]);
 		});
 	});
-	
+
 	controller.hears(['chats'],'direct_mention,mention',function(bot, message) {
 		if (message.channel == chat_channel) {
 			bot.reply(message, "Go to <https://dashboard.tawk.to|Tawk> for chats!");
