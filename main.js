@@ -232,7 +232,9 @@ bot.startRTM(function(err,bot,payload) {
 
 	controller.hears(['chats'],'direct_mention,mention',function(bot, message) {
 		if (message.channel == chat_channel) {
-			bot.reply(message, "Go to <https://dashboard.tawk.to|Tawk> for chats!");
+			bot.reply(message, {
+				"text":"Go to <https://dashboard.tawk.to|Tawk :tawkto:> for chats! :phone:"
+				});
 		}
 	});
 });
