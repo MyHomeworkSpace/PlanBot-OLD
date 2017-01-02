@@ -98,56 +98,15 @@ bot.startRTM(function(err,bot,payload) {
 		bot.reply(message, ':simple_smile:');
 	});
 
-	controller.hears(["Who is the saddest, most depressing creature in the world? ...Like this guy just makes people sad by showing his face..."], "ambient", function(bot, message) {
-		bot.reply(message, "Ignore slackbot. It's obviously @c20et.")
-	});
-
 	controller.hears(['test users'],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.reply(message,
 			{
 				"attachments": [
 					{
-						"fallback": "Go to the online PlanHub Administrative Panel and select Test User Accounts.",
-						"color": "#439FE0",
-						"pretext" : "Here is a list of test user accounts!",
-						"fields": [
-							{
-								"title": "Teacher",
-								"value": "The full name of this user is Test Teacher.",
-								"short": false
-							},
-							{
-								"title": "Username",
-								"value": "zomg_testTeacher",
-								"short": true
-							},
-							{
-								"title": "Password",
-								"value": "hexrSecret!",
-								"short": true
-							},
-							{
-								"title": "Student",
-								"value": "The full name of this user is Test User.",
-								"short": false
-							},
-							{
-								"title": "Username",
-								"value": "zomg_testUser",
-								"short": true
-							},
-							{
-								"title": "Password",
-								"value": "superSecret!",
-								"short": true
-							}
-						]
-					},
-					{
-						"fallback": "Signing into a test user account will sign you out of your account.",
+						"fallback": "Sorry, but the test users don't exist right now.",
 						"color": "danger",
-						"title": "Warning",
-						"text" : "Signing into a test user account will sign you out of your account."
+						"title": "Error",
+						"text" : "Sorry, but the test users don't exist right now."
 					}
 				]
 			}
@@ -228,14 +187,6 @@ bot.startRTM(function(err,bot,payload) {
 				}
 			]);
 		});
-	});
-
-	controller.hears(['chats'],'direct_mention,mention',function(bot, message) {
-		if (message.channel == chat_channel) {
-			bot.reply(message, {
-				"text":"Go to <https://dashboard.tawk.to|Tawk :tawkto:> for chats! :phone:"
-				});
-		}
 	});
 });
 
