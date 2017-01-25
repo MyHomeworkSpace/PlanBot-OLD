@@ -173,6 +173,9 @@ bot.startRTM(function(err,bot,payload) {
 			bot.reply(message, "*_QUAAAAAADS_*");
 		} else if(num > 4) {
 			bot.reply(message, num + "in a row. *_BEYOND GODLIKE_*");
+		} else {
+			console.log(message.ts + " " + num);
+			
 		}
 	});
 
