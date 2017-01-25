@@ -158,6 +158,23 @@ bot.startRTM(function(err,bot,payload) {
 			bot.reply(message, "Oh, that's not me!");
 		}
 	});
+	controller.hears([""],'ambient',function(bot, message) {
+		var tyme = message.ts.toString();
+		var countr = tyme.length - 1;
+		var dig = tyme[countr];
+		var num = 1;
+		while(countr > 0 && dig == tyme[countr - 1]) {
+			num +=1;
+			countr -=1
+		}
+		if(num == 3) {
+			bot.reply(message, "*_TRIIIIIIIIIPS!_*");
+		} else if(num == 4) {
+			bot.reply(message, "*_QUAAAAAADS_*");
+		} else if(num > 4) {
+			bot.reply(message, num + "in a row. *_BEYOND GODLIKE_*");
+		}
+	});
 
 	controller.hears(['shutdown', "goodnight", "good night"],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.startConversation(message,function(err, convo) {
