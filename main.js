@@ -73,9 +73,6 @@ bot.startRTM(function(err,bot,payload) {
 						if (hexme.indexOf(response.user) > -1) {
 							convo.say('YOU HAVE BEEN HEXED :hackerman: :' + logoEmoji + ':');
 							convo.next();
-							setTimeout(function() {
-								process.exit();
-							}, 3000);
 						} else {
 							convo.say("NU HEXING ALLOWED SORRY");
 							convo.next();
