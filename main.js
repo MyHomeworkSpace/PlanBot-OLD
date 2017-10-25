@@ -150,9 +150,9 @@ bot.startRTM(function(err,bot,payload) {
 		}
 	});
 
-	controller.hears(["when"],'ambient',function(bot, message) {
+	controller.hears(["when", "when?"],'ambient',function(bot, message) {
 		var mez = message.text.split(" ");
-		if(mez[mez.length-1].toLowerCase() == "when") {
+		if(mez[mez.length-1].toLowerCase() == "when" || mez[mez.length-1].toLowerCase() == "when?") {
 			bot.reply(message, 'When you code it.');
 		}	
 	});
