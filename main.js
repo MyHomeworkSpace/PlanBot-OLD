@@ -175,7 +175,14 @@ bot.startRTM(function(err,bot,payload) {
 			bot.reply(message, num + "in a row. *_BEYOND GODLIKE_*");
 		}
 	});
-
+	
+	controller.hears(["when"],'ambient',function(bot, message) {
+		var mez = message.text.split(" ")
+		if(mez[mez.length-1] == "when") {
+			bot.reply(message, 'When you code it.');
+		}	
+	});
+	
 	controller.hears(['shutdown', "goodnight", "good night"],'direct_message,direct_mention,mention',function(bot, message) {
 		bot.startConversation(message,function(err, convo) {
 			convo.ask('Are you sure you want me to shutdown?',[
